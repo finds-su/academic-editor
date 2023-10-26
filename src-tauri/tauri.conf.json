@@ -7,8 +7,8 @@
     "withGlobalTauri": false
   },
   "package": {
-    "productName": "academic-editor",
-    "version": "0.0.0"
+    "productName": "Academic Editor",
+    "version": "0.0.1"
   },
   "tauri": {
     "allowlist": {
@@ -38,8 +38,8 @@
         "fullscreen": false,
         "resizable": true,
         "title": "Academic Editor",
-        "width": 800,
-        "height": 600
+        "width": 1400,
+        "height": 800
       }
     ]
   }

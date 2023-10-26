@@ -14,14 +14,16 @@ import {
     MenubarSubTrigger,
     MenubarTrigger,
 } from '../ui/menubar';
+import { useTranslation } from 'react-i18next';
 
 export function Menu() {
+    const {t} = useTranslation()
     return (
         <Menubar className="rounded-none border-b border-none px-2 lg:px-4">
             <MenubarMenu>
-                <MenubarTrigger className="font-bold">Music</MenubarTrigger>
+                <MenubarTrigger className="font-bold">{t("menu.app")}</MenubarTrigger>
                 <MenubarContent>
-                    <MenubarItem>About Music</MenubarItem>
+                    <MenubarItem>{t("submenu.aboutApp")}</MenubarItem>
                     <MenubarSeparator />
                     <MenubarItem>
                         Preferences... <MenubarShortcut>⌘,</MenubarShortcut>
@@ -40,7 +42,7 @@ export function Menu() {
                 </MenubarContent>
             </MenubarMenu>
             <MenubarMenu>
-                <MenubarTrigger className="relative">File</MenubarTrigger>
+                <MenubarTrigger className="relative">{t("menu.file")}</MenubarTrigger>
                 <MenubarContent>
                     <MenubarSub>
                         <MenubarSubTrigger>New</MenubarSubTrigger>
@@ -99,7 +101,7 @@ export function Menu() {
                 </MenubarContent>
             </MenubarMenu>
             <MenubarMenu>
-                <MenubarTrigger>Edit</MenubarTrigger>
+                <MenubarTrigger>{t("menu.edit")}</MenubarTrigger>
                 <MenubarContent>
                     <MenubarItem disabled>
                         Undo <MenubarShortcut>⌘Z</MenubarShortcut>
@@ -164,7 +166,7 @@ export function Menu() {
                 </MenubarContent>
             </MenubarMenu>
             <MenubarMenu>
-                <MenubarTrigger>View</MenubarTrigger>
+                <MenubarTrigger>{t("menu.view")}</MenubarTrigger>
                 <MenubarContent>
                     <MenubarCheckboxItem>Show Playing Next</MenubarCheckboxItem>
                     <MenubarCheckboxItem checked>Show Lyrics</MenubarCheckboxItem>
@@ -180,7 +182,7 @@ export function Menu() {
                 </MenubarContent>
             </MenubarMenu>
             <MenubarMenu>
-                <MenubarTrigger className="hidden md:block">Account</MenubarTrigger>
+                <MenubarTrigger className="hidden md:block">{t("menu.account")}</MenubarTrigger>
                 <MenubarContent forceMount>
                     <MenubarLabel inset>Switch Account</MenubarLabel>
                     <MenubarSeparator />

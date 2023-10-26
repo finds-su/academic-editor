@@ -1,0 +1,8 @@
+{
+  "menu.app": "Редактор",
+  "menu.file": "Файл",
+  "menu.edit": "Редактировать",
+  "menu.view": "Обзор",
+  "menu.account": "Аккаунт",
+  "submenu.aboutApp": "О редакторе"
+}
