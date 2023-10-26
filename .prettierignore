@@ -1,0 +1,9 @@
+src-tauri/
+node_modules/
+dist/
+.prettierrc.js
+
+# Lock files
+yarn.lock
+package-lock.json
+pnpm-lock.yaml
