@@ -7,7 +7,7 @@
     "withGlobalTauri": false
   },
   "package": {
-    "productName": "mirea-editor",
+    "productName": "academic-editor",
     "version": "0.0.0"
   },
   "tauri": {
@@ -37,7 +37,7 @@
       {
         "fullscreen": false,
         "resizable": true,
-        "title": "mirea-editor",
+        "title": "Academic Editor",
         "width": 800,
         "height": 600
       }

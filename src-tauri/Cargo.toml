@@ -1,8 +1,8 @@
 [package]
-name = "mirea-editor"
+name = "academic-editor"
 version = "0.0.0"
-description = "A Tauri App"
-authors = ["you"]
+description = "AI powered academic editor"
+authors = ["Valery Verkhoturov"]
 license = ""
 repository = ""
 edition = "2021"
