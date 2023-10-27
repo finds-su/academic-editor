@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils';
 import { buttonVariants } from '@/components/ui/button.tsx';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 interface SidebarNavProps extends React.HTMLAttributes<HTMLElement> {
     items: {
@@ -11,13 +11,20 @@ interface SidebarNavProps extends React.HTMLAttributes<HTMLElement> {
 
 export function SidebarNav({ className, items, ...props }: SidebarNavProps) {
     const location = useLocation();
+    const navigate = useNavigate()
+
+    const handleNavigateButton = (href: string) => {
+        return () => {
+            navigate(href)
+        }
+    }
 
     return (
         <nav className={cn('flex space-x-2 lg:flex-col lg:space-x-0 lg:space-y-1', className)} {...props}>
             {items.map((item) => (
-                <a
+                <div
                     key={item.href}
-                    href={item.href}
+                    onClick={handleNavigateButton(item.href)}
                     className={cn(
                         buttonVariants({ variant: 'ghost' }),
                         location.pathname === item.href
@@ -27,7 +34,7 @@ export function SidebarNav({ className, items, ...props }: SidebarNavProps) {
                     )}
                 >
                     {item.title}
-                </a>
+                </div>
             ))}
         </nav>
     );
