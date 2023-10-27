@@ -1,8 +1,14 @@
 {
-  "menu.app": "Редактор",
+  "menu.app": "Academic Editor",
   "menu.file": "Файл",
   "menu.edit": "Редактировать",
   "menu.view": "Обзор",
   "menu.account": "Аккаунт",
-  "submenu.aboutApp": "О редакторе"
+  "submenu.aboutApp": "О редакторе",
+  "submenu.preferences": "Настройки",
+  "submenu.hideEditor": "Скрыть Academic Editor",
+  "submenu.hideOthers": "Скрыть остальные",
+  "submenu.quitEditor": "Выйти из Academic Editor",
+  "sidebar.review": "Обзор",
+  "sidebar.documents": "Документы"
 }

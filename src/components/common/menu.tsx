@@ -15,29 +15,50 @@ import {
     MenubarTrigger,
 } from '../ui/menubar';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from "react-router-dom";
+import pages from '@/constants/pages.ts';
 
 export function Menu() {
     const {t} = useTranslation()
+    const navigate = useNavigate()
+
+
+    const handelAppClick = () => {
+        navigate(pages.index)
+    }
+
+    const handelAboutAppClick = () => {
+        navigate(pages.about)
+    }
+
+    const handelPreferencesClick = () => {
+        navigate(pages.preferences)
+    }
+
     return (
         <Menubar className="rounded-none border-b border-none px-2 lg:px-4">
             <MenubarMenu>
-                <MenubarTrigger className="font-bold">{t("menu.app")}</MenubarTrigger>
+                <MenubarTrigger onClick={handelAppClick} className="font-bold">
+                    {t("menu.app")}
+                </MenubarTrigger>
                 <MenubarContent>
-                    <MenubarItem>{t("submenu.aboutApp")}</MenubarItem>
+                    <MenubarItem onClick={handelAboutAppClick}>
+                        {t("submenu.aboutApp")}
+                    </MenubarItem>
                     <MenubarSeparator />
-                    <MenubarItem>
-                        Preferences... <MenubarShortcut>⌘,</MenubarShortcut>
+                    <MenubarItem onClick={handelPreferencesClick}>
+                        {t('submenu.preferences')} <MenubarShortcut>⌘,</MenubarShortcut>
                     </MenubarItem>
                     <MenubarSeparator />
                     <MenubarItem>
-                        Hide Music... <MenubarShortcut>⌘H</MenubarShortcut>
+                        {t('submenu.hideEditor')} <MenubarShortcut>⌘H</MenubarShortcut>
                     </MenubarItem>
                     <MenubarItem>
-                        Hide Others... <MenubarShortcut>⇧⌘H</MenubarShortcut>
+                        {t('submenu.hideOthers')} <MenubarShortcut>⇧⌘H</MenubarShortcut>
                     </MenubarItem>
                     <MenubarShortcut />
                     <MenubarItem>
-                        Quit Music <MenubarShortcut>⌘Q</MenubarShortcut>
+                        {t('submenu.quitEditor')} <MenubarShortcut>⌘Q</MenubarShortcut>
                     </MenubarItem>
                 </MenubarContent>
             </MenubarMenu>
