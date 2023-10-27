@@ -17,6 +17,7 @@ import {
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from "react-router-dom";
 import pages from '@/constants/pages.ts';
+import { IconJarLogoIcon } from '@radix-ui/react-icons';
 
 export function Menu() {
     const {t} = useTranslation()
@@ -39,6 +40,11 @@ export function Menu() {
         <Menubar className="rounded-none border-b border-none px-2 lg:px-4">
             <MenubarMenu>
                 <MenubarTrigger onClick={handelAppClick} className="font-bold">
+                    <IconJarLogoIcon />
+                </MenubarTrigger>
+            </MenubarMenu>
+            <MenubarMenu>
+                <MenubarTrigger className="font-bold">
                     {t("menu.app")}
                 </MenubarTrigger>
                 <MenubarContent>
