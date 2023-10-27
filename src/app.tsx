@@ -6,27 +6,31 @@ import { playlists, Sidebar } from '@/components/common/sidebar.tsx';
 import pages from '@/constants/pages.ts';
 import AboutLayout from '@/components/pages/about/about-layout.tsx';
 import PreferencesLayout from '@/components/pages/preferences/preferences-layout.tsx';
-import DocumentsLayout from '@/components/pages/documents/documents-layout.tsx';
+import ProjectsLayout from '@/components/pages/documents/projects-layout.tsx';
+import Layout from '@/components/layout.tsx';
+import PreferencesProfileLayout from '@/components/pages/preferences/profile/preferences-profile-layout.tsx';
+import PreferencesAccountLayout from '@/components/pages/preferences/account/preferences-account-layout.tsx';
+import PreferencesAppearanceLayout from '@/components/pages/preferences/appearance/preferences-appearance-layout.tsx';
+import PreferencesNotificationsLayout from '@/components/pages/preferences/notifications/preferences-notifications-layout.tsx';
+import PreferencesDisplayLayout from '@/components/pages/preferences/display/preferences-display-layout.tsx';
 
 function App() {
     return (
         <BrowserRouter>
-            <Menu />
-            <div className="border-t">
-                <div className="bg-background">
-                    <div className="grid lg:grid-cols-5">
-                        <Sidebar playlists={playlists} className="hidden lg:block" />
-                        <div className="col-span-3 lg:col-span-4 lg:border-l">
-                            <Routes>
-                                <Route path="*" element={<IndexLayout />} />
-                                <Route path={pages.about} element={<AboutLayout />} />
-                                <Route path={pages.preferences} element={<PreferencesLayout />} />
-                                <Route path={pages.documents} element={<DocumentsLayout />} />
-                            </Routes>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <Routes>
+                <Route element={<Layout />}>
+                    <Route path="*" element={<IndexLayout />} />
+                    <Route path={pages.about} element={<AboutLayout />} />
+                    <Route element={<PreferencesLayout />}>
+                        <Route path={pages.preferencesProfile} element={<PreferencesProfileLayout />} />
+                        <Route path={pages.preferencesAccount} element={<PreferencesAccountLayout />} />
+                        <Route path={pages.preferencesAppearance} element={<PreferencesAppearanceLayout />} />
+                        <Route path={pages.preferencesNotifications} element={<PreferencesNotificationsLayout />} />
+                        <Route path={pages.preferencesDisplay} element={<PreferencesDisplayLayout />} />
+                    </Route>
+                    <Route path={pages.projects} element={<ProjectsLayout />} />
+                </Route>
+            </Routes>
         </BrowserRouter>
     );
 }

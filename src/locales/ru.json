@@ -10,5 +10,13 @@
   "submenu.hideOthers": "Скрыть остальные",
   "submenu.quitEditor": "Выйти из Academic Editor",
   "sidebar.review": "Обзор",
-  "sidebar.documents": "Документы"
+  "sidebar.documents": "Документы",
+
+  "preferences.header": "Настройки",
+  "preferences.description": "Управляйте настройками своей учетной записи и устанавливайте настройки электронной почты.",
+  "preferences.profile.header": "Профиль",
+  "preferences.account.header": "Аккаунт",
+  "preferences.appearance.header": "Вид",
+  "preferences.notifications.header": "Уведомления",
+  "preferences.display.header": "Отображение"
 }

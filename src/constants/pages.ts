@@ -1,11 +1,15 @@
 const pages = {
-    index: "/",
+    index: '/',
 
-    about: "/about/",
+    about: '/about/',
 
-    preferences: "/preferences/",
+    preferencesProfile: '/preferences/',
+    preferencesAccount: '/preferences/account',
+    preferencesAppearance: '/preferences/appearance',
+    preferencesNotifications: '/preferences/notifications',
+    preferencesDisplay: '/preferences/display',
 
-    documents: "/documents/"
-}
+    projects: '/projects/',
+};
 
-export default pages
+export default pages;

@@ -33,9 +33,7 @@ export default function IndexLayout() {
                     <div className="flex items-center justify-between">
                         <div className="space-y-1">
                             <h2 className="text-2xl font-semibold tracking-tight">Listen Now</h2>
-                            <p className="text-sm text-muted-foreground">
-                                Top picks for you. Updated daily.
-                            </p>
+                            <p className="text-sm text-muted-foreground">Top picks for you. Updated daily.</p>
                         </div>
                     </div>
                     <Separator className="my-4" />
@@ -58,9 +56,7 @@ export default function IndexLayout() {
                     </div>
                     <div className="mt-6 space-y-1">
                         <h2 className="text-2xl font-semibold tracking-tight">Made for You</h2>
-                        <p className="text-sm text-muted-foreground">
-                            Your personal playlists. Updated daily.
-                        </p>
+                        <p className="text-sm text-muted-foreground">Your personal playlists. Updated daily.</p>
                     </div>
                     <Separator className="my-4" />
                     <div className="relative">
@@ -81,16 +77,11 @@ export default function IndexLayout() {
                         </ScrollArea>
                     </div>
                 </TabsContent>
-                <TabsContent
-                    value="podcasts"
-                    className="h-full flex-col border-none p-0 data-[state=active]:flex"
-                >
+                <TabsContent value="podcasts" className="h-full flex-col border-none p-0 data-[state=active]:flex">
                     <div className="flex items-center justify-between">
                         <div className="space-y-1">
                             <h2 className="text-2xl font-semibold tracking-tight">New Episodes</h2>
-                            <p className="text-sm text-muted-foreground">
-                                Your favorite podcasts. Updated daily.
-                            </p>
+                            <p className="text-sm text-muted-foreground">Your favorite podcasts. Updated daily.</p>
                         </div>
                     </div>
                     <Separator className="my-4" />

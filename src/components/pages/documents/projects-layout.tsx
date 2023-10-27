@@ -10,10 +10,6 @@ import { AlbumArtwork, listenNowAlbums, madeForYouAlbums } from '@/components/co
 import { PodcastEmptyPlaceholder } from '@/components/common/podcast-empty-placeholder.tsx';
 import React from 'react';
 
-export default function DocumentsLayout() {
-    return (
-        <div className="h-full px-4 py-6 lg:px-8">
-            Documents
-        </div>
-    );
+export default function ProjectsLayout() {
+    return <div className="h-full px-4 py-6 lg:px-8">Documents</div>;
 }

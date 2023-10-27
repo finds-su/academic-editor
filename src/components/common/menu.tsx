@@ -15,26 +15,25 @@ import {
     MenubarTrigger,
 } from '../ui/menubar';
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 import pages from '@/constants/pages.ts';
 import { IconJarLogoIcon } from '@radix-ui/react-icons';
 
 export function Menu() {
-    const {t} = useTranslation()
-    const navigate = useNavigate()
-
+    const { t } = useTranslation();
+    const navigate = useNavigate();
 
     const handelAppClick = () => {
-        navigate(pages.index)
-    }
+        navigate(pages.index);
+    };
 
     const handelAboutAppClick = () => {
-        navigate(pages.about)
-    }
+        navigate(pages.about);
+    };
 
     const handelPreferencesClick = () => {
-        navigate(pages.preferences)
-    }
+        navigate(pages.preferencesProfile);
+    };
 
     return (
         <Menubar className="rounded-none border-b border-none px-2 lg:px-4">
@@ -44,13 +43,9 @@ export function Menu() {
                 </MenubarTrigger>
             </MenubarMenu>
             <MenubarMenu>
-                <MenubarTrigger className="font-bold">
-                    {t("menu.app")}
-                </MenubarTrigger>
+                <MenubarTrigger className="font-bold">{t('menu.app')}</MenubarTrigger>
                 <MenubarContent>
-                    <MenubarItem onClick={handelAboutAppClick}>
-                        {t("submenu.aboutApp")}
-                    </MenubarItem>
+                    <MenubarItem onClick={handelAboutAppClick}>{t('submenu.aboutApp')}</MenubarItem>
                     <MenubarSeparator />
                     <MenubarItem onClick={handelPreferencesClick}>
                         {t('submenu.preferences')} <MenubarShortcut>⌘,</MenubarShortcut>
@@ -69,7 +64,7 @@ export function Menu() {
                 </MenubarContent>
             </MenubarMenu>
             <MenubarMenu>
-                <MenubarTrigger className="relative">{t("menu.file")}</MenubarTrigger>
+                <MenubarTrigger className="relative">{t('menu.file')}</MenubarTrigger>
                 <MenubarContent>
                     <MenubarSub>
                         <MenubarSubTrigger>New</MenubarSubTrigger>
@@ -128,7 +123,7 @@ export function Menu() {
                 </MenubarContent>
             </MenubarMenu>
             <MenubarMenu>
-                <MenubarTrigger>{t("menu.edit")}</MenubarTrigger>
+                <MenubarTrigger>{t('menu.edit')}</MenubarTrigger>
                 <MenubarContent>
                     <MenubarItem disabled>
                         Undo <MenubarShortcut>⌘Z</MenubarShortcut>
@@ -193,7 +188,7 @@ export function Menu() {
                 </MenubarContent>
             </MenubarMenu>
             <MenubarMenu>
-                <MenubarTrigger>{t("menu.view")}</MenubarTrigger>
+                <MenubarTrigger>{t('menu.view')}</MenubarTrigger>
                 <MenubarContent>
                     <MenubarCheckboxItem>Show Playing Next</MenubarCheckboxItem>
                     <MenubarCheckboxItem checked>Show Lyrics</MenubarCheckboxItem>
@@ -209,7 +204,7 @@ export function Menu() {
                 </MenubarContent>
             </MenubarMenu>
             <MenubarMenu>
-                <MenubarTrigger className="hidden md:block">{t("menu.account")}</MenubarTrigger>
+                <MenubarTrigger className="hidden md:block">{t('menu.account')}</MenubarTrigger>
                 <MenubarContent forceMount>
                     <MenubarLabel inset>Switch Account</MenubarLabel>
                     <MenubarSeparator />
