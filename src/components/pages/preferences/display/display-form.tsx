@@ -29,7 +29,7 @@ const items = [
         label: 'Downloads',
     },
     {
-        id: 'documents',
+        id: 'projects',
         label: 'Documents',
     },
 ] as const;

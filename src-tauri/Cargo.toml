@@ -1,6 +1,6 @@
 [package]
 name = "academic-editor"
-version = "0.0.0"
+version = "0.0.1"
 description = "AI powered academic editor"
 authors = ["Valery Verkhoturov"]
 license = ""
@@ -13,7 +13,7 @@ edition = "2021"
 tauri-build = { version = "1.5", features = [] }
 
 [dependencies]
-tauri = { version = "1.5", features = ["shell-open"] }
+tauri = { version = "1.5", features = [ "window-hide", "window-start-dragging", "window-unminimize", "window-close", "window-show", "window-maximize", "window-unmaximize", "window-minimize", "shell-open"] }
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 

@@ -1,8 +1,6 @@
 const pages = {
     index: '/',
 
-    about: '/about/',
-
     preferencesProfile: '/preferences/',
     preferencesAccount: '/preferences/account',
     preferencesAppearance: '/preferences/appearance',
