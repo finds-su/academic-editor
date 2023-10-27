@@ -15,7 +15,7 @@ export default function Layout() {
                 <div className="bg-background">
                     <div className="grid lg:grid-cols-5">
                         <div className="max-h-[calc(100vh-36px)] overflow-y-auto">
-                            <Sidebar playlists={playlists} className="hidden lg:block" />
+                            <Sidebar recentProjects={playlists} className="hidden lg:block" />
                         </div>
                         <div className="max-h-[calc(100vh-36px)] overflow-y-auto col-span-3 lg:col-span-4 lg:border-l">
                             <Outlet />

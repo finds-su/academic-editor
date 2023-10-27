@@ -9,8 +9,16 @@
   "submenu.hideEditor": "Скрыть Academic Editor",
   "submenu.hideOthers": "Скрыть остальные",
   "submenu.quitEditor": "Выйти из Academic Editor",
-  "sidebar.review": "Обзор",
   "sidebar.projects": "Проекты",
+  "sidebar.projectList": "Список",
+  "sidebar.createProject": "Создать проект",
+
+  "sidebar.integrations": "Интеграции",
+  "sidebar.xelatex": "XeLaTeX",
+  "sidebar.pandoc": "Pandoc",
+  "sidebar.overleaf": "Overleaf",
+
+  "sidebar.recentProjects": "Недавние проекты",
 
   "aboutApp.header": "О Academic Editor",
   "aboutApp.description": "AI powered academic editor",

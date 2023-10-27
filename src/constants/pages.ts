@@ -8,6 +8,11 @@ const pages = {
     preferencesDisplay: '/preferences/display',
 
     projects: '/projects/',
+    project: '/project/',
+
+    xelatex: '/xelatex/',
+    pandoc: '/pandoc/',
+    overleaf: '/overleaf/'
 };
 
 export default pages;
