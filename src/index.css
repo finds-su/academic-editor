@@ -86,6 +86,7 @@
   scrollbar-width: none;  /* Firefox */
 }
 
+/*
 .titlebar {
   height: 32px;
   user-select: none;
@@ -106,3 +107,5 @@
 .titlebar-button:hover {
   background: hsl(var(--secondary));
 }
+*/
+

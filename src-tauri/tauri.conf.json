@@ -50,8 +50,7 @@
         "resizable": true,
         "title": "Academic Editor",
         "width": 1400,
-        "height": 800,
-        "decorations": false
+        "height": 800
       }
     ]
   }
