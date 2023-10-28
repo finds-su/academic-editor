@@ -1,4 +1,10 @@
 {
+  "login.createAccount": "Создать аккаунт",
+  "login.continueClicking": "Нажимая продолжить, Вы соглашаетесь с нашими",
+  "login.termsOfUse": "Условиями использования",
+  "login.privacy": "Политикой конфиденциальности",
+  "login.and": "и",
+
   "menu.app": "Academic Editor",
   "menu.shortApp": "AE",
   "menu.file": "Файл",

@@ -30,14 +30,14 @@ interface SidebarProps extends React.HTMLAttributes<HTMLDivElement> {
 export function Sidebar({ className, recentProjects }: SidebarProps) {
     const { t } = useTranslation();
     const navigate = useNavigate();
-    const location = useLocation()
+    const location = useLocation();
 
     const handelProjectsClick = () => {
         navigate(pages.projects);
     };
 
     const handelNewProjectClick = () => {
-        navigate(pages.project + "new");
+        navigate(pages.project + 'new');
     };
 
     const handelDocxClick = () => {
@@ -62,9 +62,11 @@ export function Sidebar({ className, recentProjects }: SidebarProps) {
                 <div className="px-3 py-2">
                     <h2 className="mb-2 px-4 text-lg font-semibold tracking-tight">{t('sidebar.projects')}</h2>
                     <div className="space-y-1">
-                        <Button onClick={handelProjectsClick}
-                                variant={location.pathname === pages.projects ? 'secondary' : "ghost"}
-                                className="w-full justify-start">
+                        <Button
+                            onClick={handelProjectsClick}
+                            variant={location.pathname === pages.projects ? 'secondary' : 'ghost'}
+                            className="w-full justify-start"
+                        >
                             <ListBulletIcon className="mr-2 h-4 w-4" stroke="currentColor" strokeWidth={0.5} />
                             {t('sidebar.projectList')}
                         </Button>
@@ -75,36 +77,46 @@ export function Sidebar({ className, recentProjects }: SidebarProps) {
                     </div>
                 </div>
                 <div className="px-3 py-2">
-                    <h2 className="mb-2 px-4 text-lg font-semibold tracking-tight">{t("sidebar.integrations")}</h2>
+                    <h2 className="mb-2 px-4 text-lg font-semibold tracking-tight">{t('sidebar.integrations')}</h2>
                     <div className="space-y-1">
-                        <Button onClick={handelDocxClick}
-                                variant={location.pathname === pages.pandoc ? 'secondary' : "ghost"}
-                                className="w-full justify-start">
+                        <Button
+                            onClick={handelDocxClick}
+                            variant={location.pathname === pages.pandoc ? 'secondary' : 'ghost'}
+                            className="w-full justify-start"
+                        >
                             <ReaderIcon className="mr-2 h-4 w-4" />
-                            {t("sidebar.docx")}
+                            {t('sidebar.docx')}
                         </Button>
-                        <Button onClick={handelPandocClick}
-                                variant={location.pathname === pages.pandoc ? 'secondary' : "ghost"}
-                                className="w-full justify-start">
+                        <Button
+                            onClick={handelPandocClick}
+                            variant={location.pathname === pages.pandoc ? 'secondary' : 'ghost'}
+                            className="w-full justify-start"
+                        >
                             <ReaderIcon className="mr-2 h-4 w-4" />
-                            {t("sidebar.pandoc")}
+                            {t('sidebar.pandoc')}
                         </Button>
-                        <Button onClick={handelXelatexClick}
-                                variant={location.pathname === pages.xelatex ? 'secondary' : "ghost"}
-                                className="w-full justify-start">
+                        <Button
+                            onClick={handelXelatexClick}
+                            variant={location.pathname === pages.xelatex ? 'secondary' : 'ghost'}
+                            className="w-full justify-start"
+                        >
                             <ReaderIcon className="mr-2 h-4 w-4" />
-                            {t("sidebar.xelatex")}
+                            {t('sidebar.xelatex')}
                         </Button>
-                        <Button onClick={handelOverleafClick}
-                                variant={location.pathname === pages.overleaf ? 'secondary' : "ghost"}
-                                className="w-full justify-start">
+                        <Button
+                            onClick={handelOverleafClick}
+                            variant={location.pathname === pages.overleaf ? 'secondary' : 'ghost'}
+                            className="w-full justify-start"
+                        >
                             <ReaderIcon className="mr-2 h-4 w-4" />
-                            {t("sidebar.overleaf")}
+                            {t('sidebar.overleaf')}
                         </Button>
                     </div>
                 </div>
                 <div className="py-2">
-                    <h2 className="relative px-7 text-lg font-semibold tracking-tight whitespace-nowrap">{t("sidebar.recentProjects")}</h2>
+                    <h2 className="relative px-7 text-lg font-semibold tracking-tight whitespace-nowrap">
+                        {t('sidebar.recentProjects')}
+                    </h2>
                     <ScrollArea className="h-[300px] px-1">
                         <div className="space-y-1 p-2">
                             {recentProjects?.map((project, i) => (

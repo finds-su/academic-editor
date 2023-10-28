@@ -10,7 +10,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 export default function ProjectsLayout() {
-    const {t} = useTranslation()
+    const { t } = useTranslation();
     return (
         <div className="h-full px-4 py-6 lg:px-8">
             <Tabs defaultValue="music" className="h-full space-y-6">
@@ -34,8 +34,10 @@ export default function ProjectsLayout() {
                 <TabsContent value="music" className="border-none p-0 outline-none">
                     <div className="flex items-center justify-between">
                         <div className="space-y-1">
-                            <h2 className="text-2xl font-semibold tracking-tight">{t("projects.recentlyOpened.header")}</h2>
-                            <p className="text-sm text-muted-foreground">{t("projects.recentlyOpened.description")}</p>
+                            <h2 className="text-2xl font-semibold tracking-tight">
+                                {t('projects.recentlyOpened.header')}
+                            </h2>
+                            <p className="text-sm text-muted-foreground">{t('projects.recentlyOpened.description')}</p>
                         </div>
                     </div>
                     <Separator className="my-4" />

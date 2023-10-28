@@ -25,7 +25,7 @@ import { appWindow } from '@tauri-apps/api/window';
 export function Menu() {
     const { t } = useTranslation();
     const navigate = useNavigate();
-    const [isOpenAboutApp, setOpenAboutApp] = useState(false)
+    const [isOpenAboutApp, setOpenAboutApp] = useState(false);
 
     const handleAppClick = () => {
         navigate(pages.index);
@@ -36,16 +36,16 @@ export function Menu() {
     };
 
     const handleHideEditorClick = () => {
-        appWindow.minimize()
-    }
+        appWindow.minimize();
+    };
 
     const handleQuitEditorClick = () => {
-        appWindow.close()
-    }
+        appWindow.close();
+    };
 
     const handleCreateNewProjectClick = () => {
-        navigate(pages.project + "new/")
-    }
+        navigate(pages.project + 'new/');
+    };
 
     return (
         <>
@@ -62,7 +62,9 @@ export function Menu() {
                         <span className="md:hidden">{t('menu.shortApp')}</span>
                     </MenubarTrigger>
                     <MenubarContent>
-                        <MenubarItem onClick={() => setOpenAboutApp(open => !open)}>{t('submenu.aboutApp')}</MenubarItem>
+                        <MenubarItem onClick={() => setOpenAboutApp((open) => !open)}>
+                            {t('submenu.aboutApp')}
+                        </MenubarItem>
                         <MenubarSeparator />
                         <MenubarItem onClick={handlePreferencesClick}>
                             {t('submenu.preferences')} <MenubarShortcut>⌘,</MenubarShortcut>

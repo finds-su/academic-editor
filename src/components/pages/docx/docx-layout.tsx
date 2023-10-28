@@ -1,3 +1,3 @@
 export default function DocxLayout() {
-    return <div className="text-2xl p-10">docx</div>
+    return <div className="text-2xl p-10">docx</div>;
 }

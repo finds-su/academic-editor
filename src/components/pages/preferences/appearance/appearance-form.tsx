@@ -25,17 +25,17 @@ const appearanceFormSchema = z.object({
 type AppearanceFormValues = z.infer<typeof appearanceFormSchema>;
 
 export function AppearanceForm() {
-    const { setTheme } = useTheme()
+    const { setTheme } = useTheme();
     const form = useForm<AppearanceFormValues>({
         resolver: zodResolver(appearanceFormSchema),
         defaultValues: {
-            theme: localStorage.getItem("ui-theme") as "light" | "dark" | undefined,
-            font: "inter"
+            theme: localStorage.getItem('ui-theme') as 'light' | 'dark' | undefined,
+            font: 'inter',
         },
     });
 
     function onSubmit(data: AppearanceFormValues) {
-        setTheme(data.theme)
+        setTheme(data.theme);
         toast({
             title: 'You submitted the following values:',
             description: (

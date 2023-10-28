@@ -3,7 +3,21 @@ import React, { useState } from 'react';
 import '@/styles/react-draft-wysiwyg.css';
 
 const toolbar = {
-    options: ['inline', 'blockType', 'fontSize', 'fontFamily', 'list', 'textAlign', 'colorPicker', 'link', 'embedded', 'emoji', 'image', 'remove', 'history'],
+    options: [
+        'inline',
+        'blockType',
+        'fontSize',
+        'fontFamily',
+        'list',
+        'textAlign',
+        'colorPicker',
+        'link',
+        'embedded',
+        'emoji',
+        'image',
+        'remove',
+        'history',
+    ],
     inline: {
         inDropdown: false,
         className: undefined,
@@ -12,31 +26,31 @@ const toolbar = {
         options: ['bold', 'italic', 'underline', 'strikethrough', 'monospace', 'superscript', 'subscript'],
         bold: {
             // icon: bold,
-            className: undefined
+            className: undefined,
         },
         italic: {
             // icon: italic,
-            className: undefined
+            className: undefined,
         },
         underline: {
             // icon: underline,
-            className: undefined
+            className: undefined,
         },
         strikethrough: {
             // icon: strikethrough,
-            className: undefined
+            className: undefined,
         },
         monospace: {
             // icon: monospace,
-            className: undefined
+            className: undefined,
         },
         superscript: {
             // icon: superscript,
-            className: undefined
+            className: undefined,
         },
         subscript: {
             // icon: subscript,
-            className: undefined
+            className: undefined,
         },
     },
     blockType: {
@@ -49,7 +63,7 @@ const toolbar = {
     fontSize: {
         // icon: fontSize,
         options: [8, 9, 10, 11, 12, 14, 16, 18, 24, 30, 36, 48, 60, 72, 96],
-        className: "text-transparent",
+        className: 'text-transparent',
         component: undefined,
         dropdownClassName: undefined,
     },
@@ -67,19 +81,19 @@ const toolbar = {
         options: ['unordered', 'ordered', 'indent', 'outdent'],
         unordered: {
             // icon: unordered,
-            className: undefined
+            className: undefined,
         },
         ordered: {
             // icon: ordered,
-            className: undefined
+            className: undefined,
         },
         indent: {
             // icon: indent,
-            className: undefined
+            className: undefined,
         },
         outdent: {
             // icon: outdent,
-            className: undefined
+            className: undefined,
         },
     },
     textAlign: {
@@ -90,19 +104,19 @@ const toolbar = {
         options: ['left', 'center', 'right', 'justify'],
         left: {
             // icon: left,
-            className: undefined
+            className: undefined,
         },
         center: {
             // icon: center,
-            className: undefined
+            className: undefined,
         },
         right: {
             // icon: right,
-            className: undefined
+            className: undefined,
         },
         justify: {
             // icon: justify,
-            className: undefined
+            className: undefined,
         },
     },
     colorPicker: {
@@ -110,12 +124,35 @@ const toolbar = {
         className: undefined,
         component: undefined,
         popupClassName: undefined,
-        colors: ['rgb(97,189,109)', 'rgb(26,188,156)', 'rgb(84,172,210)', 'rgb(44,130,201)',
-            'rgb(147,101,184)', 'rgb(71,85,119)', 'rgb(204,204,204)', 'rgb(65,168,95)', 'rgb(0,168,133)',
-            'rgb(61,142,185)', 'rgb(41,105,176)', 'rgb(85,57,130)', 'rgb(40,50,78)', 'rgb(0,0,0)',
-            'rgb(247,218,100)', 'rgb(251,160,38)', 'rgb(235,107,86)', 'rgb(226,80,65)', 'rgb(163,143,132)',
-            'rgb(239,239,239)', 'rgb(255,255,255)', 'rgb(250,197,28)', 'rgb(243,121,52)', 'rgb(209,72,65)',
-            'rgb(184,49,47)', 'rgb(124,112,107)', 'rgb(209,213,216)'],
+        colors: [
+            'rgb(97,189,109)',
+            'rgb(26,188,156)',
+            'rgb(84,172,210)',
+            'rgb(44,130,201)',
+            'rgb(147,101,184)',
+            'rgb(71,85,119)',
+            'rgb(204,204,204)',
+            'rgb(65,168,95)',
+            'rgb(0,168,133)',
+            'rgb(61,142,185)',
+            'rgb(41,105,176)',
+            'rgb(85,57,130)',
+            'rgb(40,50,78)',
+            'rgb(0,0,0)',
+            'rgb(247,218,100)',
+            'rgb(251,160,38)',
+            'rgb(235,107,86)',
+            'rgb(226,80,65)',
+            'rgb(163,143,132)',
+            'rgb(239,239,239)',
+            'rgb(255,255,255)',
+            'rgb(250,197,28)',
+            'rgb(243,121,52)',
+            'rgb(209,72,65)',
+            'rgb(184,49,47)',
+            'rgb(124,112,107)',
+            'rgb(209,213,216)',
+        ],
     },
     link: {
         inDropdown: false,
@@ -128,29 +165,150 @@ const toolbar = {
         options: ['link', 'unlink'],
         link: {
             // icon: link,
-            className: undefined
+            className: undefined,
         },
         unlink: {
             // icon: unlink,
-            className: undefined
+            className: undefined,
         },
-        linkCallback: undefined
+        linkCallback: undefined,
     },
     emoji: {
         // icon: emoji,
-        className: "hide",
+        className: 'hide',
         component: undefined,
         popupClassName: undefined,
         emojis: [
-            '😀', '😁', '😂', '😃', '😉', '😋', '😎', '😍', '😗', '🤗', '🤔', '😣', '😫', '😴', '😌', '🤓',
-            '😛', '😜', '😠', '😇', '😷', '😈', '👻', '😺', '😸', '😹', '😻', '😼', '😽', '🙀', '🙈',
-            '🙉', '🙊', '👼', '👮', '🕵', '💂', '👳', '🎅', '👸', '👰', '👲', '🙍', '🙇', '🚶', '🏃', '💃',
-            '⛷', '🏂', '🏌', '🏄', '🚣', '🏊', '⛹', '🏋', '🚴', '👫', '💪', '👈', '👉', '👉', '👆', '🖕',
-            '👇', '🖖', '🤘', '🖐', '👌', '👍', '👎', '✊', '👊', '👏', '🙌', '🙏', '🐵', '🐶', '🐇', '🐥',
-            '🐸', '🐌', '🐛', '🐜', '🐝', '🍉', '🍄', '🍔', '🍤', '🍨', '🍪', '🎂', '🍰', '🍾', '🍷', '🍸',
-            '🍺', '🌍', '🚑', '⏰', '🌙', '🌝', '🌞', '⭐', '🌟', '🌠', '🌨', '🌩', '⛄', '🔥', '🎄', '🎈',
-            '🎉', '🎊', '🎁', '🎗', '🏀', '🏈', '🎲', '🔇', '🔈', '📣', '🔔', '🎵', '🎷', '💰', '🖊', '📅',
-            '✅', '❎', '💯',
+            '😀',
+            '😁',
+            '😂',
+            '😃',
+            '😉',
+            '😋',
+            '😎',
+            '😍',
+            '😗',
+            '🤗',
+            '🤔',
+            '😣',
+            '😫',
+            '😴',
+            '😌',
+            '🤓',
+            '😛',
+            '😜',
+            '😠',
+            '😇',
+            '😷',
+            '😈',
+            '👻',
+            '😺',
+            '😸',
+            '😹',
+            '😻',
+            '😼',
+            '😽',
+            '🙀',
+            '🙈',
+            '🙉',
+            '🙊',
+            '👼',
+            '👮',
+            '🕵',
+            '💂',
+            '👳',
+            '🎅',
+            '👸',
+            '👰',
+            '👲',
+            '🙍',
+            '🙇',
+            '🚶',
+            '🏃',
+            '💃',
+            '⛷',
+            '🏂',
+            '🏌',
+            '🏄',
+            '🚣',
+            '🏊',
+            '⛹',
+            '🏋',
+            '🚴',
+            '👫',
+            '💪',
+            '👈',
+            '👉',
+            '👉',
+            '👆',
+            '🖕',
+            '👇',
+            '🖖',
+            '🤘',
+            '🖐',
+            '👌',
+            '👍',
+            '👎',
+            '✊',
+            '👊',
+            '👏',
+            '🙌',
+            '🙏',
+            '🐵',
+            '🐶',
+            '🐇',
+            '🐥',
+            '🐸',
+            '🐌',
+            '🐛',
+            '🐜',
+            '🐝',
+            '🍉',
+            '🍄',
+            '🍔',
+            '🍤',
+            '🍨',
+            '🍪',
+            '🎂',
+            '🍰',
+            '🍾',
+            '🍷',
+            '🍸',
+            '🍺',
+            '🌍',
+            '🚑',
+            '⏰',
+            '🌙',
+            '🌝',
+            '🌞',
+            '⭐',
+            '🌟',
+            '🌠',
+            '🌨',
+            '🌩',
+            '⛄',
+            '🔥',
+            '🎄',
+            '🎈',
+            '🎉',
+            '🎊',
+            '🎁',
+            '🎗',
+            '🏀',
+            '🏈',
+            '🎲',
+            '🔇',
+            '🔈',
+            '📣',
+            '🔔',
+            '🎵',
+            '🎷',
+            '💰',
+            '🖊',
+            '📅',
+            '✅',
+            '❎',
+            '💯',
         ],
     },
     embedded: {
@@ -184,7 +342,7 @@ const toolbar = {
     remove: {
         // icon: () => <EraserIcon />,
         className: undefined,
-        component: undefined
+        component: undefined,
     },
     history: {
         inDropdown: false,
@@ -194,31 +352,47 @@ const toolbar = {
         options: ['undo', 'redo'],
         undo: {
             // icon: undo,
-            className: undefined
+            className: undefined,
         },
         redo: {
             // icon: redo,
-            className: undefined
+            className: undefined,
         },
     },
-}
+};
 
-const content = {"entityMap":{},"blocks":[{"key":"637gr","text":"Initialized from content state.","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[],"data":{}}]};
+const content = {
+    entityMap: {},
+    blocks: [
+        {
+            key: '637gr',
+            text: 'Initialized from content state.',
+            type: 'unstyled',
+            depth: 0,
+            inlineStyleRanges: [],
+            entityRanges: [],
+            data: {},
+        },
+    ],
+};
 
 export default function WysiwygEditor() {
-    const [editorState, setEditorState] = useState<EditorState | undefined>(undefined)
+    const [editorState, setEditorState] = useState<EditorState | undefined>(undefined);
 
     const onEditorStateChange = (editorState: EditorState) => {
-        setEditorState(editorState)
-    }
+        setEditorState(editorState);
+    };
 
-    return <Editor toolbar={toolbar}
-                   wrapperClassName="p-2 w-full rounded-md border border-input bg-transparent transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
-                   editorClassName="min-h-[500px] w-full rounded-md bg-transparent transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
-                   editorState={editorState}
-                   onEditorStateChange={onEditorStateChange}
-                   localization={{
-                       locale: 'ru',
-                   }}
-    />
+    return (
+        <Editor
+            toolbar={toolbar}
+            wrapperClassName="p-2 w-full rounded-md border border-input bg-transparent transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+            editorClassName="min-h-[500px] w-full rounded-md bg-transparent transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+            editorState={editorState}
+            onEditorStateChange={onEditorStateChange}
+            localization={{
+                locale: 'ru',
+            }}
+        />
+    );
 }

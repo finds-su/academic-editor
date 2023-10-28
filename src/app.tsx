@@ -15,9 +15,9 @@ import PandocLayout from '@/components/pages/pandoc/pandoc-layout.tsx';
 import OverleafLayout from '@/components/pages/overleaf/overleaf-layout.tsx';
 import ProjectLayout from '@/components/pages/project/project-layout.tsx';
 import DocxLayout from '@/components/pages/docx/docx-layout.tsx';
+import LoginLayout from '@/components/pages/login/login-layout.tsx';
 
 function App() {
-
     // useEffect(() => {
     //     document.getElementById('titlebar-minimize')
     //         ?.addEventListener('click', () => appWindow.minimize())
@@ -30,6 +30,8 @@ function App() {
     return (
         <BrowserRouter>
             <Routes>
+                <Route path={pages.login} element={<LoginLayout />} />
+
                 <Route element={<Layout />}>
                     <Route path="*" element={<ProjectsLayout />} />
                     <Route element={<PreferencesLayout />}>
@@ -40,7 +42,7 @@ function App() {
                         <Route path={pages.preferencesDisplay} element={<PreferencesDisplayLayout />} />
                     </Route>
                     <Route path={pages.projects} element={<ProjectsLayout />} />
-                    <Route path={pages.project + ":id/"} element={<ProjectLayout />} />
+                    <Route path={pages.project + ':id/'} element={<ProjectLayout />} />
 
                     <Route path={pages.docx} element={<DocxLayout />} />
                     <Route path={pages.pandoc} element={<PandocLayout />} />
