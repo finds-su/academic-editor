@@ -1,0 +1,16 @@
+.git
+.vscode
+.dockerignore
+.gitignore
+.env
+.env.*
+!.env.example
+config
+build
+node_modules
+docker-compose.yaml
+Dockerfile
+README.md
+src-tauri
+dist
+.DS_Store
