@@ -7,9 +7,9 @@ import pages from '@/constants/pages.ts';
 import { FileIcon, FilePlusIcon, ListBulletIcon, PlusCircledIcon, ReaderIcon } from '@radix-ui/react-icons';
 import React from 'react';
 
-export type Playlist = (typeof playlists)[number];
+export type Playlist = (typeof recentProjects)[number];
 
-export const playlists = [
+export const recentProjects = [
     'Курсовая по БД',
     'Отчет по алгоритмам',
     'ВКР',
@@ -40,12 +40,16 @@ export function Sidebar({ className, recentProjects }: SidebarProps) {
         navigate(pages.project + "new");
     };
 
-    const handelXelatexClick = () => {
-        navigate(pages.xelatex);
+    const handelDocxClick = () => {
+        navigate(pages.docx);
     };
 
     const handelPandocClick = () => {
         navigate(pages.pandoc);
+    };
+
+    const handelXelatexClick = () => {
+        navigate(pages.xelatex);
     };
 
     const handelOverleafClick = () => {
@@ -64,7 +68,7 @@ export function Sidebar({ className, recentProjects }: SidebarProps) {
                             <ListBulletIcon className="mr-2 h-4 w-4" stroke="currentColor" strokeWidth={0.5} />
                             {t('sidebar.projectList')}
                         </Button>
-                        <Button onClick={handelNewProjectClick} variant="destructive" className="w-full justify-start">
+                        <Button onClick={handelNewProjectClick} variant="default" className="w-full justify-start">
                             <FilePlusIcon className="mr-2 h-4 w-4" />
                             {t('sidebar.createProject')}
                         </Button>
@@ -73,17 +77,23 @@ export function Sidebar({ className, recentProjects }: SidebarProps) {
                 <div className="px-3 py-2">
                     <h2 className="mb-2 px-4 text-lg font-semibold tracking-tight">{t("sidebar.integrations")}</h2>
                     <div className="space-y-1">
-                        <Button onClick={handelXelatexClick}
-                                variant={location.pathname === pages.xelatex ? 'secondary' : "ghost"}
+                        <Button onClick={handelDocxClick}
+                                variant={location.pathname === pages.pandoc ? 'secondary' : "ghost"}
                                 className="w-full justify-start">
                             <ReaderIcon className="mr-2 h-4 w-4" />
-                            {t("sidebar.xelatex")}
+                            {t("sidebar.docx")}
                         </Button>
                         <Button onClick={handelPandocClick}
                                 variant={location.pathname === pages.pandoc ? 'secondary' : "ghost"}
                                 className="w-full justify-start">
                             <ReaderIcon className="mr-2 h-4 w-4" />
                             {t("sidebar.pandoc")}
+                        </Button>
+                        <Button onClick={handelXelatexClick}
+                                variant={location.pathname === pages.xelatex ? 'secondary' : "ghost"}
+                                className="w-full justify-start">
+                            <ReaderIcon className="mr-2 h-4 w-4" />
+                            {t("sidebar.xelatex")}
                         </Button>
                         <Button onClick={handelOverleafClick}
                                 variant={location.pathname === pages.overleaf ? 'secondary' : "ghost"}

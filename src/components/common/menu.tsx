@@ -39,6 +39,10 @@ export function Menu() {
         appWindow.minimize()
     }
 
+    const handleQuitEditorClick = () => {
+        appWindow.close()
+    }
+
     const handleCreateNewProjectClick = () => {
         navigate(pages.project + "new/")
     }
@@ -53,8 +57,10 @@ export function Menu() {
                     </MenubarTrigger>
                 </MenubarMenu>
                 <MenubarMenu>
-                    <MenubarTrigger className="font-bold hidden md:block">{t('menu.app')}</MenubarTrigger>
-                    <MenubarTrigger className="font-bold md:hidden">{t('menu.shortApp')}</MenubarTrigger>
+                    <MenubarTrigger className="font-bold">
+                        <span className="hidden md:block">{t('menu.app')}</span>
+                        <span className="md:hidden">{t('menu.shortApp')}</span>
+                    </MenubarTrigger>
                     <MenubarContent>
                         <MenubarItem onClick={() => setOpenAboutApp(open => !open)}>{t('submenu.aboutApp')}</MenubarItem>
                         <MenubarSeparator />
@@ -65,11 +71,7 @@ export function Menu() {
                         <MenubarItem onClick={handleHideEditorClick}>
                             {t('submenu.hideEditor')} <MenubarShortcut>⌘H</MenubarShortcut>
                         </MenubarItem>
-                        <MenubarItem>
-                            {t('submenu.hideOthers')} <MenubarShortcut>⇧⌘H</MenubarShortcut>
-                        </MenubarItem>
-                        <MenubarShortcut />
-                        <MenubarItem>
+                        <MenubarItem onClick={handleQuitEditorClick}>
                             {t('submenu.quitEditor')} <MenubarShortcut>⌘Q</MenubarShortcut>
                         </MenubarItem>
                     </MenubarContent>
@@ -83,14 +85,6 @@ export function Menu() {
                                 <MenubarItem onClick={handleCreateNewProjectClick}>
                                     {t('submenu.newProject')} <MenubarShortcut>⌘N</MenubarShortcut>
                                 </MenubarItem>
-                                <MenubarItem disabled>
-                                    Playlist from Selection <MenubarShortcut>⇧⌘N</MenubarShortcut>
-                                </MenubarItem>
-                                <MenubarItem>
-                                    Smart Playlist... <MenubarShortcut>⌥⌘N</MenubarShortcut>
-                                </MenubarItem>
-                                <MenubarItem>Playlist Folder</MenubarItem>
-                                <MenubarItem disabled>Genius Playlist</MenubarItem>
                             </MenubarSubContent>
                         </MenubarSub>
                         <MenubarItem>

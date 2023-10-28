@@ -1,3 +1,3 @@
 export default function XelatexLayout() {
-    return <div>xelatex</div>
+    return <div className="text-2xl p-10">xelatex</div>
 }

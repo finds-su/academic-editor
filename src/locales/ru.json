@@ -8,7 +8,6 @@
   "submenu.aboutApp": "О Academic Editor",
   "submenu.preferences": "Настройки",
   "submenu.hideEditor": "Скрыть Academic Editor",
-  "submenu.hideOthers": "Скрыть остальные",
   "submenu.quitEditor": "Выйти из Academic Editor",
   "submenu.new": "Новый",
   "submenu.newProject": "Проект...",
@@ -17,8 +16,9 @@
   "sidebar.createProject": "Создать проект",
 
   "sidebar.integrations": "Интеграции",
-  "sidebar.xelatex": "XeLaTeX",
+  "sidebar.docx": "MS Word",
   "sidebar.pandoc": "Pandoc",
+  "sidebar.xelatex": "XeLaTeX",
   "sidebar.overleaf": "Overleaf",
 
   "sidebar.recentProjects": "Недавние проекты",
@@ -33,6 +33,9 @@
   "preferences.appearance.header": "Вид",
   "preferences.notifications.header": "Уведомления",
   "preferences.display.header": "Отображение",
+
+  "projects.recentlyOpened.header": "Вы недавно открывали",
+  "projects.recentlyOpened.description": "Ваши последние редактированные проекты",
 
   "project.createNew.titlePlaceholder": "Название проекта",
   "project.createNew.description": "Добавьте название проекта и сохраните",

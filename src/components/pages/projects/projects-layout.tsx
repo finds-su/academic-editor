@@ -4,11 +4,13 @@ import { Button } from '@/components/ui/button';
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
 import { Separator } from '@/components/ui/separator';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { AlbumArtwork, listenNowAlbums, madeForYouAlbums } from '@/components/common/album-artwork.tsx';
+import { AlbumArtwork, recentProjects, madeForYouAlbums } from '@/components/common/album-artwork.tsx';
 import { PodcastEmptyPlaceholder } from '@/components/common/podcast-empty-placeholder.tsx';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 export default function ProjectsLayout() {
+    const {t} = useTranslation()
     return (
         <div className="h-full px-4 py-6 lg:px-8">
             <Tabs defaultValue="music" className="h-full space-y-6">
@@ -32,17 +34,17 @@ export default function ProjectsLayout() {
                 <TabsContent value="music" className="border-none p-0 outline-none">
                     <div className="flex items-center justify-between">
                         <div className="space-y-1">
-                            <h2 className="text-2xl font-semibold tracking-tight">Listen Now</h2>
-                            <p className="text-sm text-muted-foreground">Top picks for you. Updated daily.</p>
+                            <h2 className="text-2xl font-semibold tracking-tight">{t("projects.recentlyOpened.header")}</h2>
+                            <p className="text-sm text-muted-foreground">{t("projects.recentlyOpened.description")}</p>
                         </div>
                     </div>
                     <Separator className="my-4" />
                     <div className="relative">
                         <ScrollArea>
                             <div className="flex space-x-4 pb-4">
-                                {listenNowAlbums.map((album) => (
+                                {recentProjects.map((album) => (
                                     <AlbumArtwork
-                                        key={album.name}
+                                        key={album.title}
                                         album={album}
                                         className="w-[250px]"
                                         aspectRatio="portrait"
@@ -64,7 +66,7 @@ export default function ProjectsLayout() {
                             <div className="flex space-x-4 pb-4">
                                 {madeForYouAlbums.map((album) => (
                                     <AlbumArtwork
-                                        key={album.name}
+                                        key={album.title}
                                         album={album}
                                         className="w-[150px]"
                                         aspectRatio="square"

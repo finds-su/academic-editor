@@ -10,8 +10,9 @@ const pages = {
     projects: '/projects/',
     project: '/project/',
 
-    xelatex: '/xelatex/',
+    docx: '/docx',
     pandoc: '/pandoc/',
+    xelatex: '/xelatex/',
     overleaf: '/overleaf/'
 };
 

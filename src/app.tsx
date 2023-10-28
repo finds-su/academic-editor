@@ -14,6 +14,7 @@ import XelatexLayout from '@/components/pages/xelatex/xelatex-layout.tsx';
 import PandocLayout from '@/components/pages/pandoc/pandoc-layout.tsx';
 import OverleafLayout from '@/components/pages/overleaf/overleaf-layout.tsx';
 import ProjectLayout from '@/components/pages/project/project-layout.tsx';
+import DocxLayout from '@/components/pages/docx/docx-layout.tsx';
 
 function App() {
 
@@ -41,8 +42,9 @@ function App() {
                     <Route path={pages.projects} element={<ProjectsLayout />} />
                     <Route path={pages.project + ":id/"} element={<ProjectLayout />} />
 
-                    <Route path={pages.xelatex} element={<XelatexLayout />} />
+                    <Route path={pages.docx} element={<DocxLayout />} />
                     <Route path={pages.pandoc} element={<PandocLayout />} />
+                    <Route path={pages.xelatex} element={<XelatexLayout />} />
                     <Route path={pages.overleaf} element={<OverleafLayout />} />
                 </Route>
             </Routes>

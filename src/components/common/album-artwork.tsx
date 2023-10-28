@@ -29,70 +29,67 @@ export const playlists = [
     'Eminem Essentials',
 ];
 
-export interface Album {
-    name: string;
-    artist: string;
-    cover: string;
+export interface ProjectPreview {
+    title: string;
+    previewHref: string;
 }
 
-export const listenNowAlbums: Album[] = [
+export const recentProjects: ProjectPreview[] = [
     {
-        name: 'React Rendezvous',
-        artist: 'Ethan Byte',
-        cover: 'https://images.unsplash.com/photo-1611348586804-61bf6c080437?w=300&dpr=2&q=80',
+        title: 'React Rendezvous',
+        previewHref: '/document-example.jpeg',
     },
     {
-        name: 'Async Awakenings',
-        artist: 'Nina Netcode',
-        cover: 'https://images.unsplash.com/photo-1468817814611-b7edf94b5d60?w=300&dpr=2&q=80',
+        title: 'React Rendezvous',
+        previewHref: '/document-example.jpeg',
     },
     {
-        name: 'The Art of Reusability',
-        artist: 'Lena Logic',
-        cover: 'https://images.unsplash.com/photo-1528143358888-6d3c7f67bd5d?w=300&dpr=2&q=80',
+        title: 'React Rendezvous',
+        previewHref: '/document-example.jpeg',
     },
     {
-        name: 'Stateful Symphony',
-        artist: 'Beth Binary',
-        cover: 'https://images.unsplash.com/photo-1490300472339-79e4adc6be4a?w=300&dpr=2&q=80',
+        title: 'React Rendezvous',
+        previewHref: '/document-example.jpeg',
+    },
+    {
+        title: 'React Rendezvous',
+        previewHref: '/document-example.jpeg',
+    },
+    {
+        title: 'React Rendezvous',
+        previewHref: '/document-example.jpeg',
     },
 ];
 
-export const madeForYouAlbums: Album[] = [
+export const madeForYouAlbums: ProjectPreview[] = [
     {
-        name: 'Thinking Components',
-        artist: 'Lena Logic',
-        cover: 'https://images.unsplash.com/photo-1615247001958-f4bc92fa6a4a?w=300&dpr=2&q=80',
+        title: 'Thinking Components',
+        previewHref: 'https://images.unsplash.com/photo-1615247001958-f4bc92fa6a4a?w=300&dpr=2&q=80',
     },
     {
-        name: 'Functional Fury',
-        artist: 'Beth Binary',
-        cover: 'https://images.unsplash.com/photo-1513745405825-efaf9a49315f?w=300&dpr=2&q=80',
+        title: 'Functional Fury',
+        previewHref: 'https://images.unsplash.com/photo-1513745405825-efaf9a49315f?w=300&dpr=2&q=80',
     },
     {
-        name: 'React Rendezvous',
-        artist: 'Ethan Byte',
-        cover: 'https://images.unsplash.com/photo-1614113489855-66422ad300a4?w=300&dpr=2&q=80',
+        title: 'React Rendezvous',
+        previewHref: 'https://images.unsplash.com/photo-1614113489855-66422ad300a4?w=300&dpr=2&q=80',
     },
     {
-        name: 'Stateful Symphony',
-        artist: 'Beth Binary',
-        cover: 'https://images.unsplash.com/photo-1446185250204-f94591f7d702?w=300&dpr=2&q=80',
+        title: 'Stateful Symphony',
+        previewHref: 'https://images.unsplash.com/photo-1446185250204-f94591f7d702?w=300&dpr=2&q=80',
     },
     {
-        name: 'Async Awakenings',
-        artist: 'Nina Netcode',
-        cover: 'https://images.unsplash.com/photo-1468817814611-b7edf94b5d60?w=300&dpr=2&q=80',
+        title: 'Async Awakenings',
+        previewHref: 'https://images.unsplash.com/photo-1468817814611-b7edf94b5d60?w=300&dpr=2&q=80',
     },
     {
-        name: 'The Art of Reusability',
-        artist: 'Lena Logic',
-        cover: 'https://images.unsplash.com/photo-1490300472339-79e4adc6be4a?w=300&dpr=2&q=80',
+        title: 'The Art of Reusability',
+        previewHref: 'https://images.unsplash.com/photo-1490300472339-79e4adc6be4a?w=300&dpr=2&q=80',
     },
 ];
 
 interface AlbumArtworkProps extends React.HTMLAttributes<HTMLDivElement> {
-    album: Album;
+    album: ProjectPreview;
     aspectRatio?: 'portrait' | 'square';
     width?: number;
     height?: number;
@@ -112,8 +109,8 @@ export function AlbumArtwork({
                 <ContextMenuTrigger>
                     <div className="overflow-hidden rounded-md">
                         <img
-                            src={album.cover}
-                            alt={album.name}
+                            src={album.previewHref}
+                            alt={album.title}
                             width={width}
                             height={height}
                             className={cn(
@@ -162,8 +159,8 @@ export function AlbumArtwork({
                 </ContextMenuContent>
             </ContextMenu>
             <div className="space-y-1 text-sm">
-                <h3 className="font-medium leading-none">{album.name}</h3>
-                <p className="text-xs text-muted-foreground">{album.artist}</p>
+                <h3 className="font-medium leading-none">{album.title}</h3>
+                {/*<p className="text-xs text-muted-foreground">{album.artist}</p>*/}
             </div>
         </div>
     );

@@ -1,12 +1,12 @@
 import { Tabs, TabsContent } from '@/components/ui/tabs.tsx';
 import { Separator } from '@/components/ui/separator.tsx';
-import React, { lazy, Suspense } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button.tsx';
+import WysiwygEditor from '@/components/common/wysiwyg-editor.tsx';
 
-const WysiwygEditor = lazy(() => import('@/components/common/wysiwyg-editor'));
 export default function ProjectLayout() {
     const {t} = useTranslation()
     const {id} = useParams()
@@ -26,9 +26,7 @@ export default function ProjectLayout() {
                 </div>
                 <Separator className="my-4" />
                 <div className="relative">
-                    <Suspense fallback={<div>Loading</div>}>
-                        <WysiwygEditor />
-                    </Suspense>
+                    <WysiwygEditor />
                 </div>
             </TabsContent>
         </Tabs>
