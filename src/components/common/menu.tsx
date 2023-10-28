@@ -39,6 +39,10 @@ export function Menu() {
         appWindow.minimize()
     }
 
+    const handleCreateNewProjectClick = () => {
+        navigate(pages.project + "new/")
+    }
+
     return (
         <>
             <AboutAppDialog open={isOpenAboutApp} onOpenChange={(value) => setOpenAboutApp(value)} />
@@ -49,7 +53,8 @@ export function Menu() {
                     </MenubarTrigger>
                 </MenubarMenu>
                 <MenubarMenu>
-                    <MenubarTrigger className="font-bold">{t('menu.app')}</MenubarTrigger>
+                    <MenubarTrigger className="font-bold hidden md:block">{t('menu.app')}</MenubarTrigger>
+                    <MenubarTrigger className="font-bold md:hidden">{t('menu.shortApp')}</MenubarTrigger>
                     <MenubarContent>
                         <MenubarItem onClick={() => setOpenAboutApp(open => !open)}>{t('submenu.aboutApp')}</MenubarItem>
                         <MenubarSeparator />
@@ -73,10 +78,10 @@ export function Menu() {
                     <MenubarTrigger className="relative">{t('menu.file')}</MenubarTrigger>
                     <MenubarContent>
                         <MenubarSub>
-                            <MenubarSubTrigger>New</MenubarSubTrigger>
+                            <MenubarSubTrigger>{t('submenu.new')}</MenubarSubTrigger>
                             <MenubarSubContent className="w-[230px]">
-                                <MenubarItem>
-                                    Playlist <MenubarShortcut>⌘N</MenubarShortcut>
+                                <MenubarItem onClick={handleCreateNewProjectClick}>
+                                    {t('submenu.newProject')} <MenubarShortcut>⌘N</MenubarShortcut>
                                 </MenubarItem>
                                 <MenubarItem disabled>
                                     Playlist from Selection <MenubarShortcut>⇧⌘N</MenubarShortcut>

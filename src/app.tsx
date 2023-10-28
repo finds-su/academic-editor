@@ -13,17 +13,18 @@ import { appWindow } from '@tauri-apps/api/window';
 import XelatexLayout from '@/components/pages/xelatex/xelatex-layout.tsx';
 import PandocLayout from '@/components/pages/pandoc/pandoc-layout.tsx';
 import OverleafLayout from '@/components/pages/overleaf/overleaf-layout.tsx';
+import ProjectLayout from '@/components/pages/project/project-layout.tsx';
 
 function App() {
 
-    useEffect(() => {
-        document.getElementById('titlebar-minimize')
-            ?.addEventListener('click', () => appWindow.minimize())
-        document.getElementById('titlebar-maximize')
-            ?.addEventListener('click', async () => !(await appWindow.isMaximized()) && appWindow.toggleMaximize())
-        document.getElementById('titlebar-close')
-            ?.addEventListener('click', () => appWindow.close())
-    }, []);
+    // useEffect(() => {
+    //     document.getElementById('titlebar-minimize')
+    //         ?.addEventListener('click', () => appWindow.minimize())
+    //     document.getElementById('titlebar-maximize')
+    //         ?.addEventListener('click', async () => !(await appWindow.isMaximized()) && appWindow.toggleMaximize())
+    //     document.getElementById('titlebar-close')
+    //         ?.addEventListener('click', () => appWindow.close())
+    // }, []);
 
     return (
         <BrowserRouter>
@@ -38,6 +39,7 @@ function App() {
                         <Route path={pages.preferencesDisplay} element={<PreferencesDisplayLayout />} />
                     </Route>
                     <Route path={pages.projects} element={<ProjectsLayout />} />
+                    <Route path={pages.project + ":id/"} element={<ProjectLayout />} />
 
                     <Route path={pages.xelatex} element={<XelatexLayout />} />
                     <Route path={pages.pandoc} element={<PandocLayout />} />

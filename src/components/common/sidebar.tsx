@@ -94,7 +94,7 @@ export function Sidebar({ className, recentProjects }: SidebarProps) {
                     </div>
                 </div>
                 <div className="py-2">
-                    <h2 className="relative px-7 text-lg font-semibold tracking-tight">{t("sidebar.recentProjects")}</h2>
+                    <h2 className="relative px-7 text-lg font-semibold tracking-tight whitespace-nowrap">{t("sidebar.recentProjects")}</h2>
                     <ScrollArea className="h-[300px] px-1">
                         <div className="space-y-1 p-2">
                             {recentProjects?.map((project, i) => (

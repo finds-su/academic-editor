@@ -1,5 +1,6 @@
 {
   "menu.app": "Academic Editor",
+  "menu.shortApp": "AE",
   "menu.file": "Файл",
   "menu.edit": "Редактировать",
   "menu.view": "Обзор",
@@ -9,6 +10,8 @@
   "submenu.hideEditor": "Скрыть Academic Editor",
   "submenu.hideOthers": "Скрыть остальные",
   "submenu.quitEditor": "Выйти из Academic Editor",
+  "submenu.new": "Новый",
+  "submenu.newProject": "Проект...",
   "sidebar.projects": "Проекты",
   "sidebar.projectList": "Список",
   "sidebar.createProject": "Создать проект",
@@ -29,5 +32,9 @@
   "preferences.account.header": "Аккаунт",
   "preferences.appearance.header": "Вид",
   "preferences.notifications.header": "Уведомления",
-  "preferences.display.header": "Отображение"
+  "preferences.display.header": "Отображение",
+
+  "project.createNew.titlePlaceholder": "Название проекта",
+  "project.createNew.description": "Добавьте название проекта и сохраните",
+  "project.createNew.save": "Сохранить"
 }
