@@ -16,6 +16,7 @@ export default function Layout() {
     const [isSidebarCollapsed, setSidebarCollapsed] = useState(false);
     const {t} = useTranslation()
 
+
     const expandSidebarPanel = () => {
         const panel = sidebarPanel.current;
         if (panel) {
