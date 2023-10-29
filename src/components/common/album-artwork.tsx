@@ -12,77 +12,73 @@ import {
     ContextMenuTrigger,
 } from '../ui/context-menu';
 
-export type Playlist = (typeof playlists)[number];
-
-export const playlists = [
-    'Recently Added',
-    'Recently Played',
-    'Top Songs',
-    'Top Albums',
-    'Top Artists',
-    'Logic Discography',
-    'Bedtime Beats',
-    'Feeling Happy',
-    'I miss Y2K Pop',
-    'Runtober',
-    'Mellow Days',
-    'Eminem Essentials',
-];
-
 export interface ProjectPreview {
+    id: number;
     title: string;
     previewHref: string;
 }
 
 export const recentProjects: ProjectPreview[] = [
     {
+        id: 1,
+        title: 'Курсовая по БД',
+        previewHref: '/document-example.jpeg',
+    },
+    {
+        id: 2,
+        title: 'Отчет по алгоритмам',
+        previewHref: '/document-example.jpeg',
+    },
+    {
+        id: 3,
         title: 'React Rendezvous',
         previewHref: '/document-example.jpeg',
     },
     {
-        title: 'React Rendezvous',
+        id: 4,
+        title: 'ВКР',
         previewHref: '/document-example.jpeg',
     },
     {
-        title: 'React Rendezvous',
+        id: 5,
+        title: 'Очень очень очень очень очень очень очень длинное название',
         previewHref: '/document-example.jpeg',
     },
     {
-        title: 'React Rendezvous',
-        previewHref: '/document-example.jpeg',
-    },
-    {
-        title: 'React Rendezvous',
-        previewHref: '/document-example.jpeg',
-    },
-    {
-        title: 'React Rendezvous',
+        id: 6,
+        title: 'Куросая работа по большим данным',
         previewHref: '/document-example.jpeg',
     },
 ];
 
 export const madeForYouAlbums: ProjectPreview[] = [
     {
+        id: 7,
         title: 'Thinking Components',
         previewHref: 'https://images.unsplash.com/photo-1615247001958-f4bc92fa6a4a?w=300&dpr=2&q=80',
     },
     {
+        id: 8,
         title: 'Functional Fury',
         previewHref: 'https://images.unsplash.com/photo-1513745405825-efaf9a49315f?w=300&dpr=2&q=80',
     },
     {
+        id: 9,
         title: 'React Rendezvous',
         previewHref: 'https://images.unsplash.com/photo-1614113489855-66422ad300a4?w=300&dpr=2&q=80',
     },
     {
+        id: 10,
         title: 'Stateful Symphony',
         previewHref: 'https://images.unsplash.com/photo-1446185250204-f94591f7d702?w=300&dpr=2&q=80',
     },
     {
+        id: 11,
         title: 'Async Awakenings',
         previewHref: 'https://images.unsplash.com/photo-1468817814611-b7edf94b5d60?w=300&dpr=2&q=80',
     },
     {
+        id: 12,
         title: 'The Art of Reusability',
         previewHref: 'https://images.unsplash.com/photo-1490300472339-79e4adc6be4a?w=300&dpr=2&q=80',
     },
@@ -130,8 +126,8 @@ export function AlbumArtwork({
                                 New Playlist
                             </ContextMenuItem>
                             <ContextMenuSeparator />
-                            {playlists.map((playlist) => (
-                                <ContextMenuItem key={playlist}>
+                            {recentProjects.map((project) => (
+                                <ContextMenuItem key={project.id}>
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="none"
@@ -144,7 +140,7 @@ export function AlbumArtwork({
                                     >
                                         <path d="M21 15V6M18.5 18a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM12 12H3M16 6H3M12 18H3" />
                                     </svg>
-                                    {playlist}
+                                    {project.title}
                                 </ContextMenuItem>
                             ))}
                         </ContextMenuSubContent>

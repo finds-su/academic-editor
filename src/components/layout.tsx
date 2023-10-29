@@ -1,4 +1,4 @@
-import { recentProjects, Sidebar } from '@/components/common/sidebar.tsx';
+import { Sidebar } from '@/components/common/sidebar.tsx';
 import { Outlet } from 'react-router-dom';
 import React, { useEffect, useRef, useState } from 'react';
 import { Menu } from '@/components/common/menu.tsx';
@@ -6,6 +6,8 @@ import Providers from '@/components/providers.tsx';
 import { ImperativePanelHandle, Panel, PanelGroup, PanelResizeHandle } from 'react-resizable-panels';
 import { ArrowLeftIcon, ArrowRightIcon, ListBulletIcon } from '@radix-ui/react-icons';
 import { IconButton } from '@/components/ui/iconButton.tsx';
+import { recentProjects } from '@/components/common/album-artwork.tsx';
+import ErrorBoundary from '@/components/common/error-boundary.tsx';
 
 export default function Layout() {
     const sidebarPanel = useRef<ImperativePanelHandle>(null);
@@ -45,6 +47,7 @@ export default function Layout() {
                     <div className="bg-background">
                         <PanelGroup direction="horizontal" autoSaveId="main-panels">
                             <Panel
+                                key="sidebar"
                                 id="sidebar"
                                 ref={sidebarPanel}
                                 collapsible
@@ -52,49 +55,45 @@ export default function Layout() {
                                 defaultSize={20}
                                 className="max-h-[calc(100vh-36px)] hidden lg:block"
                             >
-                                <div className="max-h-[calc(100vh-36px)] overflow-y-auto">
-                                    <Sidebar recentProjects={recentProjects} />
-                                </div>
+                                <ErrorBoundary>
+                                    <div className="max-h-[calc(100vh-36px)] overflow-y-auto">
+                                        <Sidebar recentProjects={recentProjects} />
+                                    </div>
+                                </ErrorBoundary>
                             </Panel>
                             {!isSidebarCollapsed && (
-                                <PanelResizeHandle className="hidden lg:block w-0.5 bg-primary/20 hover:bg-primary/50" />
+                                <PanelResizeHandle className="hidden lg:block w-[1px] bg-border" />
                             )}
-                            <Panel id="main" minSize={70}>
-                                <div className="max-h-[calc(100vh-36px)] overflow-y-auto col-span-3 lg:col-span-4">
-                                    <IconButton
-                                        className="mt-1 ml-1"
-                                        variant="ghost"
-                                        size={'sm'}
-                                        onClick={expandSidebarPanel}
-                                    >
-                                        {isSidebarCollapsed ? (
-                                            <ArrowRightIcon
-                                                className="mr-2 h-4 w-4"
-                                                stroke="currentColor"
-                                                strokeWidth={0.5}
-                                            />
-                                        ) : (
-                                            <ArrowLeftIcon
-                                                className="mr-2 h-4 w-4"
-                                                stroke="currentColor"
-                                                strokeWidth={0.5}
-                                            />
-                                        )}
-                                    </IconButton>
-                                    <div className="-mt-7">
-                                        <Outlet />
+                            <Panel key="main" id="main" minSize={70}>
+                                <ErrorBoundary>
+                                    <div className="max-h-[calc(100vh-36px)] overflow-y-auto col-span-3 lg:col-span-4">
+                                        <IconButton
+                                            className="lg:mt-1 lg:ml-1 hidden lg:block"
+                                            variant="ghost"
+                                            size='sm'
+                                            onClick={expandSidebarPanel}
+                                        >
+                                            {isSidebarCollapsed ? (
+                                                <ArrowRightIcon
+                                                    className="mr-2 h-4 w-4"
+                                                    stroke="currentColor"
+                                                    strokeWidth={0.5}
+                                                />
+                                            ) : (
+                                                <ArrowLeftIcon
+                                                    className="mr-2 h-4 w-4"
+                                                    stroke="currentColor"
+                                                    strokeWidth={0.5}
+                                                />
+                                            )}
+                                        </IconButton>
+                                        <div className="lg:-mt-7">
+                                            <Outlet />
+                                        </div>
                                     </div>
-                                </div>
+                                </ErrorBoundary>
                             </Panel>
                         </PanelGroup>
-                        {/*<div className="grid lg:grid-cols-5">*/}
-                        {/*<div className="max-h-[calc(100vh-36px)] overflow-y-auto">*/}
-                        {/*    <Sidebar recentProjects={playlists} className="hidden lg:block" />*/}
-                        {/*</div>*/}
-                        {/*<div className="max-h-[calc(100vh-36px)] overflow-y-auto col-span-3 lg:col-span-4 lg:border-l">*/}
-                        {/*    <Outlet />*/}
-                        {/*</div>*/}
-                        {/*</div>*/}
                     </div>
                 </div>
             </Providers>

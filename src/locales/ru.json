@@ -45,5 +45,8 @@
 
   "project.createNew.titlePlaceholder": "Название проекта",
   "project.createNew.description": "Добавьте название проекта и сохраните",
-  "project.createNew.save": "Сохранить"
+  "project.createNew.save": "Сохранить",
+
+  "errorBoundary.header": "Ошибка",
+  "errorBoundary.renderError": "Ошибка отправлена в техподдержку. Попробуйте воспользоваться функционалом позже."
 }

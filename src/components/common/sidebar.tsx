@@ -6,25 +6,10 @@ import { useTranslation } from 'react-i18next';
 import pages from '@/constants/pages.ts';
 import { FileIcon, FilePlusIcon, ListBulletIcon, PlusCircledIcon, ReaderIcon } from '@radix-ui/react-icons';
 import React from 'react';
-
-export type Playlist = (typeof recentProjects)[number];
-
-export const recentProjects = [
-    'Курсовая по БД',
-    'Отчет по алгоритмам',
-    'ВКР',
-    'Очень очень очень очень очень очень очень длинное название',
-    'Куросая работа по большим данным',
-    'Куросая работа по большим данным',
-    'Куросая работа по большим данным',
-    'Куросая работа по большим данным',
-    'Куросая работа по большим данным',
-    'Куросая работа по большим данным',
-    'Куросая работа по большим данным',
-];
+import { ProjectPreview } from '@/components/common/album-artwork.tsx';
 
 interface SidebarProps extends React.HTMLAttributes<HTMLDivElement> {
-    recentProjects: Playlist[];
+    recentProjects: ProjectPreview[];
 }
 
 export function Sidebar({ className, recentProjects }: SidebarProps) {
@@ -56,6 +41,12 @@ export function Sidebar({ className, recentProjects }: SidebarProps) {
         navigate(pages.overleaf);
     };
 
+    const handleRecentProjectNavigate = (project: ProjectPreview) => {
+        return () => {
+            navigate(pages.project + project.id)
+        }
+    }
+
     return (
         <div className={cn('pb-12', className)}>
             <div className="space-y-4 py-4">
@@ -81,7 +72,7 @@ export function Sidebar({ className, recentProjects }: SidebarProps) {
                     <div className="space-y-1">
                         <Button
                             onClick={handelDocxClick}
-                            variant={location.pathname === pages.pandoc ? 'secondary' : 'ghost'}
+                            variant={location.pathname === pages.docx ? 'secondary' : 'ghost'}
                             className="w-full justify-start"
                         >
                             <ReaderIcon className="mr-2 h-4 w-4" />
@@ -124,9 +115,10 @@ export function Sidebar({ className, recentProjects }: SidebarProps) {
                                     key={`${project}-${i}`}
                                     variant="ghost"
                                     className="w-full justify-start font-normal"
+                                    onClick={handleRecentProjectNavigate(project)}
                                 >
                                     <FileIcon className="mr-2 h-4 w-4" />
-                                    {project}
+                                    {project.title}
                                 </Button>
                             ))}
                         </div>
