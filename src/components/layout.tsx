@@ -40,7 +40,7 @@ export default function Layout() {
             document.title = `${nameTranslate} ${t("menu.app")}`
             appWindow?.setTitle(`${t("menu.app")} / ${nameTranslate}`)
         }
-    }, [window.location])
+    }, [window.location.pathname])
 
     useEffect(() => {
         if (sidebarPanel.current) {

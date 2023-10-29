@@ -1,0 +1,34 @@
+version: '3'
+
+tasks:
+  dev-front:
+    cmds:
+      - npm run dev
+
+  dev:
+    cmds:
+      - npm run tauri dev
+
+  build:
+    cmds:
+      - npm run tauri build
+
+  build-win-x86:
+    cmds:
+      - npm run tauri build --target i686-pc-windows-msvc
+
+  build-win-arm:
+    cmds:
+      - npm run tauri build --target aarch64-pc-windows-msvc
+
+  build-mac-x86:
+    cmds:
+      - npm run tauri build --target x86_64-apple-darwin
+
+  build-mac-arm:
+    cmds:
+      - npm run tauri build --target aarch64-apple-darwin
+
+  build-mac:
+    cmds:
+      - npm run tauri build --target universal-apple-darwin
