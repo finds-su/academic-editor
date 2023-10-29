@@ -20,7 +20,7 @@ import pages from '@/constants/pages.ts';
 import { IconJarLogoIcon } from '@radix-ui/react-icons';
 import AboutAppDialog from '@/components/common/about-app-dialog.tsx';
 import React, { useState } from 'react';
-import { appWindow } from '@tauri-apps/api/window';
+import { appWindow } from '@/constants/tauri.ts';
 
 export function Menu() {
     const { t } = useTranslation();
@@ -36,11 +36,11 @@ export function Menu() {
     };
 
     const handleHideEditorClick = () => {
-        appWindow.minimize();
+        appWindow?.minimize();
     };
 
     const handleQuitEditorClick = () => {
-        appWindow.close();
+        appWindow?.close();
     };
 
     const handleCreateNewProjectClick = () => {

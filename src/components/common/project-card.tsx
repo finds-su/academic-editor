@@ -85,14 +85,14 @@ export const madeForYouAlbums: ProjectPreview[] = [
 ];
 
 interface AlbumArtworkProps extends React.HTMLAttributes<HTMLDivElement> {
-    album: ProjectPreview;
+    project: ProjectPreview;
     aspectRatio?: 'portrait' | 'square';
     width?: number;
     height?: number;
 }
 
-export function AlbumArtwork({
-    album,
+export function ProjectCard({
+    project,
     aspectRatio = 'portrait',
     width,
     height,
@@ -105,8 +105,8 @@ export function AlbumArtwork({
                 <ContextMenuTrigger>
                     <div className="overflow-hidden rounded-md">
                         <img
-                            src={album.previewHref}
-                            alt={album.title}
+                            src={project.previewHref}
+                            alt={project.title}
                             width={width}
                             height={height}
                             className={cn(
@@ -155,7 +155,7 @@ export function AlbumArtwork({
                 </ContextMenuContent>
             </ContextMenu>
             <div className="space-y-1 text-sm">
-                <h3 className="font-medium leading-none">{album.title}</h3>
+                <h3 className="font-medium leading-none">{project.title}</h3>
                 {/*<p className="text-xs text-muted-foreground">{album.artist}</p>*/}
             </div>
         </div>

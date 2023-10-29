@@ -1,16 +1,22 @@
-import { PlusCircledIcon } from '@radix-ui/react-icons';
-
-import { Button } from '@/components/ui/button';
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
 import { Separator } from '@/components/ui/separator';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { AlbumArtwork, recentProjects, madeForYouAlbums } from '@/components/common/album-artwork.tsx';
+import { ProjectCard, recentProjects, madeForYouAlbums, ProjectPreview } from '@/components/common/project-card.tsx';
 import { PodcastEmptyPlaceholder } from '@/components/common/podcast-empty-placeholder.tsx';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
+import pages from '@/constants/pages.ts';
 
 export default function ProjectsLayout() {
     const { t } = useTranslation();
+    const navigate = useNavigate()
+
+    const handleProjectNavigate = (project: ProjectPreview) => {
+        return () => {
+            navigate(pages.project + project.id)
+        }
+    }
     return (
         <div className="h-full px-4 py-6 lg:px-8">
             <Tabs defaultValue="music" className="h-full space-y-6">
@@ -44,10 +50,11 @@ export default function ProjectsLayout() {
                     <div className="relative">
                         <ScrollArea>
                             <div className="flex space-x-4 pb-4">
-                                {recentProjects.map((album) => (
-                                    <AlbumArtwork
-                                        key={album.title}
-                                        album={album}
+                                {recentProjects.map((project) => (
+                                    <ProjectCard
+                                        key={project.id}
+                                        onClick={handleProjectNavigate(project)}
+                                        project={project}
                                         className="w-[250px]"
                                         aspectRatio="portrait"
                                         width={250}
@@ -67,9 +74,9 @@ export default function ProjectsLayout() {
                         <ScrollArea>
                             <div className="flex space-x-4 pb-4">
                                 {madeForYouAlbums.map((album) => (
-                                    <AlbumArtwork
+                                    <ProjectCard
                                         key={album.title}
-                                        album={album}
+                                        project={album}
                                         className="w-[150px]"
                                         aspectRatio="square"
                                         width={150}

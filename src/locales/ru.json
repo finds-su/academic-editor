@@ -1,4 +1,11 @@
 {
+  "pages.projects": "Проекты",
+  "pages.preferences": "Настройки",
+  "pages.docx": "Интеграция MS Word",
+  "pages.pandoc": "Интеграция Pandoc",
+  "pages.xelatex": "Интеграция XeLaTeX",
+  "pages.overleaf": "Интеграция Overleaf",
+
   "login.createAccount": "Создать аккаунт",
   "login.continueClicking": "Нажимая продолжить, Вы соглашаетесь с нашими",
   "login.termsOfUse": "Условиями использования",

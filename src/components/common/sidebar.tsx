@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import pages from '@/constants/pages.ts';
 import { FileIcon, FilePlusIcon, ListBulletIcon, PlusCircledIcon, ReaderIcon } from '@radix-ui/react-icons';
 import React from 'react';
-import { ProjectPreview } from '@/components/common/album-artwork.tsx';
+import { ProjectPreview } from '@/components/common/project-card.tsx';
 
 interface SidebarProps extends React.HTMLAttributes<HTMLDivElement> {
     recentProjects: ProjectPreview[];
